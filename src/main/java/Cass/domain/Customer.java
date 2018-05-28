@@ -1,14 +1,14 @@
 package Cass.domain;
 
-import org.springframework.data.cassandra.mapping.PrimaryKey;
-import org.springframework.data.cassandra.mapping.Table;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 @Table
 public class Customer {
     @PrimaryKey
     private int id;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private int age;
 
 
@@ -17,8 +17,8 @@ public class Customer {
 
     public Customer(int id, String fisrtname, String lastname, int age) {
         this.id = id;
-        this.firstname = fisrtname;
-        this.lastname = lastname;
+        this.firstName = fisrtname;
+        this.lastName = lastname;
         this.age = age;
     }
 
@@ -32,19 +32,19 @@ public class Customer {
     }
 
     public String getFisrtname() {
-        return firstname;
+        return firstName;
     }
 
     public void setFisrtname(String fisrtname) {
-        this.firstname = fisrtname;
+        this.firstName = fisrtname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getAge() {
@@ -57,7 +57,7 @@ public class Customer {
 
     @Override
     public String toString (){
-        return String.format("Customer[id=%d, firstname=%s, lastname=%s, age=%d]", this.id, this.firstname, this.lastname, this.age);
+        return String.format("Customer[id=%d, firstName=%s, lastName=%s, age=%d]", this.id, this.firstName, this.lastName, this.age);
     }
 
 }
